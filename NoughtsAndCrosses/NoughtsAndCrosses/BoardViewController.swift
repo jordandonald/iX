@@ -30,10 +30,11 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
+    
     func handleRotation(sender: UIRotationGestureRecognizer? = nil) {
         
         self.boardView.transform = CGAffineTransformMakeRotation(sender!.rotation)
-        
+    
         //Rotation Ends
         print("rotation detected")
         if (sender!.state == UIGestureRecognizerState.Ended) {
@@ -110,6 +111,10 @@ func restartGame() {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.navigateToLandingViewNavigationController()
+        
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIdLoggedIn")
+        
+        
     }
 
 

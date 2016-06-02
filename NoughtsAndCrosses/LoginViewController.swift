@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//LoginViewController.swift
 //  NoughtsAndCrosses
 //
 //  Created by Jordan Donald on 5/31/16.
@@ -14,20 +14,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: EmailValidatedTextField!
     
     @IBOutlet weak var passwordField: UITextField!
- 
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    self.title = "Login"
+        self.title = "Login"
         
         //emailField.delegate = self
         //passwordField.delegate = self
         //userInput.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTapped(sender: UIButton) {
         
-       if (!emailField.validate()){
+        if (!emailField.validate()){
             return
         }
         
@@ -63,6 +63,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 appDelegate.navigateToBoardViewController()
                 
+                //at this point we are happy to login the user, so let's implement persistence
+                NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIdLoggedIn")
+               
+                
             }
             else {
                 if let failureMessageObj = failureMessage {
@@ -78,8 +82,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-
-
+    
+    
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         

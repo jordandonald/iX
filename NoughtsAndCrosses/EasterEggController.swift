@@ -86,7 +86,7 @@ class EasterEggController: NSObject, UIGestureRecognizerDelegate
     
     func handlelongPress(sender: UILongPressGestureRecognizer? = nil)
     {
-        
+        print("long press")
         if (key[index] == "longPress")
         {
             print("long press")

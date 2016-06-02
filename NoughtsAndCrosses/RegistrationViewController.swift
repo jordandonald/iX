@@ -54,6 +54,8 @@ class RegistrationViewController: UIViewController {
                 let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 appDelegate.navigateToBoardViewController()
                 
+                NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIdLoggedIn")
+                
                 print("User registered successfully!")
             } else {
                 if (failureMessage != nil){
