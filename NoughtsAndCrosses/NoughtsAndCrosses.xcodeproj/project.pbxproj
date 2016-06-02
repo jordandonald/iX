@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17164ED71CFF690B0020BF61 /* EasterEggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17164ED51CFF690B0020BF61 /* EasterEggViewController.swift */; };
+		17164ED81CFF690B0020BF61 /* EasterEggViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17164ED61CFF690B0020BF61 /* EasterEggViewController.xib */; };
+		17164EDB1CFF69DB0020BF61 /* EasterEggController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17164EDA1CFF69DB0020BF61 /* EasterEggController.swift */; };
+		1718D1411CFCE7840025A3E1 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718D1401CFCE7840025A3E1 /* OXGame.swift */; };
+		1757C8711CFE2E6100598400 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C86F1CFE2E6100598400 /* LandingViewController.swift */; };
+		1757C8721CFE2E6100598400 /* LandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757C8701CFE2E6100598400 /* LandingViewController.xib */; };
+		1757C8751CFE2E8100598400 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C8731CFE2E8100598400 /* LoginViewController.swift */; };
+		1757C8761CFE2E8100598400 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757C8741CFE2E8100598400 /* LoginViewController.xib */; };
+		1757C8791CFE2EEF00598400 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C8771CFE2EEF00598400 /* RegistrationViewController.swift */; };
+		1757C87A1CFE2EEF00598400 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757C8781CFE2EEF00598400 /* RegistrationViewController.xib */; };
+		1757C87C1CFE337100598400 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C87B1CFE337100598400 /* UserController.swift */; };
+		1757C87E1CFEDC0100598400 /* EmailValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C87D1CFEDC0100598400 /* EmailValidatedTextField.swift */; };
 		42D447CE1CD765670070326E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D447CD1CD765670070326E /* AppDelegate.swift */; };
 		42D447D51CD765670070326E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D41CD765670070326E /* Assets.xcassets */; };
 		42D447D81CD765670070326E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D61CD765670070326E /* LaunchScreen.storyboard */; };
@@ -34,19 +46,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17164ED51CFF690B0020BF61 /* EasterEggViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggViewController.swift; sourceTree = "<group>"; };
+		17164ED61CFF690B0020BF61 /* EasterEggViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasterEggViewController.xib; sourceTree = "<group>"; };
+		17164EDA1CFF69DB0020BF61 /* EasterEggController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggController.swift; sourceTree = "<group>"; };
+		1718D1401CFCE7840025A3E1 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OXGame.swift; sourceTree = "<group>"; };
+		1757C86F1CFE2E6100598400 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		1757C8701CFE2E6100598400 /* LandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandingViewController.xib; sourceTree = "<group>"; };
+		1757C8731CFE2E8100598400 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1757C8741CFE2E8100598400 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		1757C8771CFE2EEF00598400 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		1757C8781CFE2EEF00598400 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		1757C87B1CFE337100598400 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		1757C87D1CFEDC0100598400 /* EmailValidatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatedTextField.swift; sourceTree = "<group>"; };
 		42D447CA1CD765670070326E /* NoughtsAndCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoughtsAndCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447CD1CD765670070326E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D447D41CD765670070326E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D447D71CD765670070326E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42D447D91CD765670070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42D447DE1CD765680070326E /* NoughtsAndCrossesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsAndCrossesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D447DE1CD765680070326E /* NoughtsAndCrosses.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsAndCrosses.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447E21CD765680070326E /* NoughtsAndCrossesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoughtsAndCrossesTests.swift; sourceTree = "<group>"; };
 		42D447E41CD765680070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42D447E91CD765680070326E /* NoughtsAndCrossesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsAndCrossesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D447E91CD765680070326E /* NoughtsAndCrosses.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoughtsAndCrosses.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447ED1CD765680070326E /* NoughtsAndCrossesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoughtsAndCrossesUITests.swift; sourceTree = "<group>"; };
 		42D447EF1CD765680070326E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBDE70821CF87AD00025275C /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
-		FBDE70831CF87AD00025275C /* BoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardViewController.xib; sourceTree = "<group>"; };
+		FBDE70821CF87AD00025275C /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardViewController.swift; path = NoughtsAndCrosses/BoardViewController.swift; sourceTree = "<group>"; };
+		FBDE70831CF87AD00025275C /* BoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BoardViewController.xib; path = NoughtsAndCrosses/BoardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +98,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17164ED91CFF69360020BF61 /* Easter Egg */ = {
+			isa = PBXGroup;
+			children = (
+				17164ED51CFF690B0020BF61 /* EasterEggViewController.swift */,
+				17164ED61CFF690B0020BF61 /* EasterEggViewController.xib */,
+				17164EDA1CFF69DB0020BF61 /* EasterEggController.swift */,
+			);
+			name = "Easter Egg";
+			sourceTree = "<group>";
+		};
+		1757C86D1CFE274100598400 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE70821CF87AD00025275C /* BoardViewController.swift */,
+				FBDE70831CF87AD00025275C /* BoardViewController.xib */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		1757C86E1CFE27F800598400 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1757C86F1CFE2E6100598400 /* LandingViewController.swift */,
+				1757C8701CFE2E6100598400 /* LandingViewController.xib */,
+				1757C8731CFE2E8100598400 /* LoginViewController.swift */,
+				1757C8741CFE2E8100598400 /* LoginViewController.xib */,
+				1757C8771CFE2EEF00598400 /* RegistrationViewController.swift */,
+				1757C8781CFE2EEF00598400 /* RegistrationViewController.xib */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 		427A5B651CE0FF4A00328EE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +140,14 @@
 		42D447C11CD765670070326E = {
 			isa = PBXGroup;
 			children = (
-				42D447CC1CD765670070326E /* NoughtsAndCrosses */,
-				42D447E11CD765680070326E /* NoughtsAndCrossesTests */,
+				1757C87D1CFEDC0100598400 /* EmailValidatedTextField.swift */,
+				1757C87B1CFE337100598400 /* UserController.swift */,
+				17164ED91CFF69360020BF61 /* Easter Egg */,
+				1757C86D1CFE274100598400 /* Game */,
+				1757C86E1CFE27F800598400 /* Authentication */,
 				42D447EC1CD765680070326E /* NoughtsAndCrossesUITests */,
 				42D447CB1CD765670070326E /* Products */,
+				42D447E11CD765680070326E /* NoughtsAndCrossesTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				42D447CA1CD765670070326E /* NoughtsAndCrosses.app */,
-				42D447DE1CD765680070326E /* NoughtsAndCrossesTests.xctest */,
-				42D447E91CD765680070326E /* NoughtsAndCrossesUITests.xctest */,
+				42D447DE1CD765680070326E /* NoughtsAndCrosses.xctest */,
+				42D447E91CD765680070326E /* NoughtsAndCrosses.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,19 +165,20 @@
 			isa = PBXGroup;
 			children = (
 				42D447CD1CD765670070326E /* AppDelegate.swift */,
-				FBDE70821CF87AD00025275C /* BoardViewController.swift */,
-				FBDE70831CF87AD00025275C /* BoardViewController.xib */,
+				1718D1401CFCE7840025A3E1 /* OXGame.swift */,
 				42D447D41CD765670070326E /* Assets.xcassets */,
 				42D447D61CD765670070326E /* LaunchScreen.storyboard */,
 				42D447D91CD765670070326E /* Info.plist */,
 				427A5B651CE0FF4A00328EE7 /* Model */,
 			);
-			path = NoughtsAndCrosses;
+			name = NoughtsAndCrosses;
+			path = ../NoughtsAndCrosses;
 			sourceTree = "<group>";
 		};
 		42D447E11CD765680070326E /* NoughtsAndCrossesTests */ = {
 			isa = PBXGroup;
 			children = (
+				42D447CC1CD765670070326E /* NoughtsAndCrosses */,
 				42D447E21CD765680070326E /* NoughtsAndCrossesTests.swift */,
 				42D447E41CD765680070326E /* Info.plist */,
 			);
@@ -168,7 +229,7 @@
 			);
 			name = NoughtsAndCrossesTests;
 			productName = NoughtsAndCrossesTests;
-			productReference = 42D447DE1CD765680070326E /* NoughtsAndCrossesTests.xctest */;
+			productReference = 42D447DE1CD765680070326E /* NoughtsAndCrosses.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		42D447E81CD765680070326E /* NoughtsAndCrossesUITests */ = {
@@ -186,7 +247,7 @@
 			);
 			name = NoughtsAndCrossesUITests;
 			productName = NoughtsAndCrossesUITests;
-			productReference = 42D447E91CD765680070326E /* NoughtsAndCrossesUITests.xctest */;
+			productReference = 42D447E91CD765680070326E /* NoughtsAndCrosses.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -237,8 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1757C8761CFE2E8100598400 /* LoginViewController.xib in Resources */,
 				42D447D81CD765670070326E /* LaunchScreen.storyboard in Resources */,
 				42D447D51CD765670070326E /* Assets.xcassets in Resources */,
+				17164ED81CFF690B0020BF61 /* EasterEggViewController.xib in Resources */,
+				1757C87A1CFE2EEF00598400 /* RegistrationViewController.xib in Resources */,
+				1757C8721CFE2E6100598400 /* LandingViewController.xib in Resources */,
 				FBDE70851CF87AD00025275C /* BoardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1757C8791CFE2EEF00598400 /* RegistrationViewController.swift in Sources */,
+				17164EDB1CFF69DB0020BF61 /* EasterEggController.swift in Sources */,
+				17164ED71CFF690B0020BF61 /* EasterEggViewController.swift in Sources */,
 				42D447CE1CD765670070326E /* AppDelegate.swift in Sources */,
+				1718D1411CFCE7840025A3E1 /* OXGame.swift in Sources */,
+				1757C8711CFE2E6100598400 /* LandingViewController.swift in Sources */,
+				1757C87C1CFE337100598400 /* UserController.swift in Sources */,
+				1757C8751CFE2E8100598400 /* LoginViewController.swift in Sources */,
 				FBDE70841CF87AD00025275C /* BoardViewController.swift in Sources */,
+				1757C87E1CFEDC0100598400 /* EmailValidatedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +478,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrosses;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 			};
 			name = Debug;
 		};
@@ -417,7 +490,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrosses;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 			};
 			name = Release;
 		};
@@ -428,7 +501,7 @@
 				INFOPLIST_FILE = NoughtsAndCrossesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrossesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoughtsAndCrosses.app/NoughtsAndCrosses";
 			};
 			name = Debug;
@@ -440,7 +513,7 @@
 				INFOPLIST_FILE = NoughtsAndCrossesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrossesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoughtsAndCrosses.app/NoughtsAndCrosses";
 			};
 			name = Release;
@@ -451,7 +524,7 @@
 				INFOPLIST_FILE = NoughtsAndCrossesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrossesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 				TEST_TARGET_NAME = NoughtsAndCrosses;
 			};
 			name = Debug;
@@ -462,7 +535,7 @@
 				INFOPLIST_FILE = NoughtsAndCrossesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AS.NoughtsAndCrossesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NoughtsAndCrosses;
 				TEST_TARGET_NAME = NoughtsAndCrosses;
 			};
 			name = Release;
