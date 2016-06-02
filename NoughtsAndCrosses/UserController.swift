@@ -66,4 +66,21 @@ class UserController {
         return ("No user with that email", nil)
         
     }
+    
+//   //Mark:-User Persistence Functions
+//    
+//    func getStoredUser (id:String) -> User? {
+//        
+//        if let userPassword:String = NSUserDefaults.standardUserDefaults().objectForKey(<#T##defaultName: String##String#>){
+//            
+//            //user found
+//            let user = User(email: id, password: userPassword)
+//            return User
+//        }
+//        else {
+//            return ("Password incorrect.")
+//        }
+//        
+//        
+//    }
 }

@@ -28,20 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //This allows the gestures to be deployed on everypage
         EasterEggController.sharedInstance.initiate(self.window!)
         
+        let landingViewController = LandingViewController(nibName: "LandingViewController", bundle:nil)
+        self.authorisationNavigationController = UINavigationController(rootViewController: landingViewController)
+        
+        
+        let boardViewController = BoardViewController(nibName:"BoardViewController",bundle:nil)
+        self.BoardViewNavigationController = UINavigationController(rootViewController: boardViewController)
+        //Hide the Navigation Bar during Gameplay
+        self.BoardViewNavigationController?.navigationBarHidden = true
+        
         
         if let _ = userIsLoggedIn {
             
-            let boardViewController = BoardViewController(nibName:"BoardViewController",bundle:nil)
-            self.BoardViewNavigationController = UINavigationController(rootViewController: boardViewController)
             self.window?.rootViewController = self.BoardViewNavigationController
-            
-            //Hide the Navigation Bar during Gameplay
-            self.BoardViewNavigationController?.navigationBarHidden = true
             
         } else {
             
-            let landingViewController = LandingViewController(nibName: "LandingViewController", bundle:nil)
-            self.authorisationNavigationController = UINavigationController(rootViewController: landingViewController)
             self.window?.rootViewController = self.authorisationNavigationController
         }
     
