@@ -11,12 +11,14 @@ import UIKit
 class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    var gameList = [OXGame]()
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         
@@ -36,14 +38,21 @@ class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITabl
     
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        if (gameList.count > 0){
+            return gameList.count
+        }
+        else {
+            return 0
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Test"
-        
+        cell.textLabel?.text = self.gameList[indexPath.row].hostUser?.email
+
         return cell
     }
     
@@ -60,10 +69,13 @@ class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
+        
+        gameList = OXGameController.sharedInstance.getListOfGames()!
+        
 
         }
-        
+    
     }
     
 

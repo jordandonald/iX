@@ -20,10 +20,16 @@ enum OXGameState:String {
     case complete_someone_won
 }
 
+
 class OXGame {
     
+    var hostUser: User?
+    var guestUser: User?
+    var backendState: OXGameState?
+    var gameId: String?
+
     //the board data, stored in 1D array
-    private var board = [CellType] (count: 9, repeatedValue: CellType.EMPTY)
+    var board = [CellType] (count: 9, repeatedValue: CellType.EMPTY)
     
     //decide which CellType is going to start
     private var startType = CellType.X
