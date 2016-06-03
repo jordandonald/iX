@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             
-            self.window?.rootViewController = self.authorisationNavigationController
+            self.window?.rootViewController = self.BoardViewNavigationController
         }
     
         

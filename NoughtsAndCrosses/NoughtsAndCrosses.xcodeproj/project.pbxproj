@@ -19,6 +19,8 @@
 		1757C87A1CFE2EEF00598400 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757C8781CFE2EEF00598400 /* RegistrationViewController.xib */; };
 		1757C87C1CFE337100598400 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C87B1CFE337100598400 /* UserController.swift */; };
 		1757C87E1CFEDC0100598400 /* EmailValidatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C87D1CFEDC0100598400 /* EmailValidatedTextField.swift */; };
+		179339F81D016F37002C5589 /* NetworkPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179339F61D016F37002C5589 /* NetworkPlayViewController.swift */; };
+		179339F91D016F37002C5589 /* NetworkPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179339F71D016F37002C5589 /* NetworkPlayViewController.xib */; };
 		42D447CE1CD765670070326E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D447CD1CD765670070326E /* AppDelegate.swift */; };
 		42D447D51CD765670070326E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D41CD765670070326E /* Assets.xcassets */; };
 		42D447D81CD765670070326E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D447D61CD765670070326E /* LaunchScreen.storyboard */; };
@@ -58,6 +60,8 @@
 		1757C8781CFE2EEF00598400 /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		1757C87B1CFE337100598400 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		1757C87D1CFEDC0100598400 /* EmailValidatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatedTextField.swift; sourceTree = "<group>"; };
+		179339F61D016F37002C5589 /* NetworkPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPlayViewController.swift; sourceTree = "<group>"; };
+		179339F71D016F37002C5589 /* NetworkPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkPlayViewController.xib; sourceTree = "<group>"; };
 		42D447CA1CD765670070326E /* NoughtsAndCrosses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoughtsAndCrosses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D447CD1CD765670070326E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42D447D41CD765670070326E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			children = (
 				FBDE70821CF87AD00025275C /* BoardViewController.swift */,
 				FBDE70831CF87AD00025275C /* BoardViewController.xib */,
+				179339F61D016F37002C5589 /* NetworkPlayViewController.swift */,
+				179339F71D016F37002C5589 /* NetworkPlayViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				42D447D51CD765670070326E /* Assets.xcassets in Resources */,
 				17164ED81CFF690B0020BF61 /* EasterEggViewController.xib in Resources */,
 				1757C87A1CFE2EEF00598400 /* RegistrationViewController.xib in Resources */,
+				179339F91D016F37002C5589 /* NetworkPlayViewController.xib in Resources */,
 				1757C8721CFE2E6100598400 /* LandingViewController.xib in Resources */,
 				FBDE70851CF87AD00025275C /* BoardViewController.xib in Resources */,
 			);
@@ -336,6 +343,7 @@
 				1718D1411CFCE7840025A3E1 /* OXGame.swift in Sources */,
 				1757C8711CFE2E6100598400 /* LandingViewController.swift in Sources */,
 				1757C87C1CFE337100598400 /* UserController.swift in Sources */,
+				179339F81D016F37002C5589 /* NetworkPlayViewController.swift in Sources */,
 				1757C8751CFE2E8100598400 /* LoginViewController.swift in Sources */,
 				FBDE70841CF87AD00025275C /* BoardViewController.swift in Sources */,
 				1757C87E1CFEDC0100598400 /* EmailValidatedTextField.swift in Sources */,

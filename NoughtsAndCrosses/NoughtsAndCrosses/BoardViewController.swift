@@ -13,6 +13,7 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var boardView: UIView!
     
     var gameObject = OXGame()
+    var networkMode:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,19 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
    
 }
 
+    @IBOutlet weak var networkButton: UIButton!
+    
+    @IBAction func networkButtonTapped(sender: UIButton) {
+        
+        
+        let npc = NetworkPlayViewController (nibName: "NetworkPlayViewController", bundle:nil)
+        self.navigationController?.pushViewController(npc, animated: true)
+        
+    }
+    
+    
+    
+    
 
     @IBOutlet var buttons: [UIButton]!
 
@@ -106,14 +120,36 @@ func restartGame() {
         restartGame()
 }
     
+    
+    @IBOutlet weak var logOutButton: UIButton!
+    
     @IBAction func logOutButton(sender: UIButton) {
         
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        appDelegate.navigateToLandingViewNavigationController()
+        if (networkMode){
+            self.navigationController?.popViewControllerAnimated(true)
+            
+            logOutButton.setTitle("Cancel Game", forState: UIControlState.Normal)
+        }
+        else {
+            let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.navigateToLandingViewNavigationController()
+            
+            NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIdLoggedIn")
+        }
         
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userIdLoggedIn")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
         
+        if (networkMode) {
+            
+            networkButton.hidden = true
+            
+            logOutButton.setTitle("Cancel Game", forState: UIControlState.Normal)
+        }
         
     }
 
