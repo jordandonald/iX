@@ -35,42 +35,35 @@ class RegistrationViewController: UIViewController {
         let email = emailField.text!
         let password = passwordField.text!
         
-        if ((email == "") || (password == "")) {
-            let alertController = UIAlertController(title: "WARNING", message: "Please complete the form!", preferredStyle: .Alert)
+        //new registration code
+        UserController.sharedInstance.registerUser(email,password: password, presentingViewController: self, viewControllerCompletionFunction: {(user,message) in self.registrationComplete(user,message:message)})
+
+    }
+    
+    func registrationComplete(user:User?,message:String?) {
+        
+        if let _ = user   {
             
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            
-            alertController.addAction(OKAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-            
-        else {
-            
-            let (failureMessage, user) = UserController.sharedInstance.registerUser(email, newPassword: password)
-            
-            if (user != nil){
-                
+            //successfully registered
+            let alert = UIAlertController(title:"Registration Successful", message:"You will now be logged in", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {(action) in
+                //when the user clicks "Ok", do the following
                 let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 appDelegate.navigateToBoardViewController()
-                
-                NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIdLoggedIn")
-                
-                print("User registered successfully!")
-            } else {
-                if (failureMessage != nil){
-                    let alertController = UIAlertController(title: "WARNING", message: failureMessage, preferredStyle: .Alert)
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    
-                    alertController.addAction(OKAction)
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)            }
-            }
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
             
-            print("Register tapped.")
+        }   else    {
+            
+            //registration failed
+            let alert = UIAlertController(title:"Registration Failed", message:message!, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: {
+                
+            })
+            
         }
-
     }
     
 }

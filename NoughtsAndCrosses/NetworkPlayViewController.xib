@@ -22,6 +22,9 @@
                     <state key="normal" title="Start Network Game">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="startNetworkGameButton:" destination="-1" eventType="touchUpInside" id="h2g-oc-kfT"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uLK-dv-CnU">
                     <rect key="frame" x="0.0" y="88" width="375" height="528"/>

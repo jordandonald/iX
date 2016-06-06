@@ -1,0 +1,36 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++5E0B1D5" : 0,
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++640D30B" : 0,
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++BD739ED" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "41EE220E-CEE0-426A-BC19-87E8817A43E5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++5E0B1D5" : "..",
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++640D30B" : "",
+    "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++BD739ED" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NoughtsAndCrosses",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NoughtsAndCrosses.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jordandonald\/iX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++5E0B1D5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jordandonald\/iX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++640D30B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jordandonald\/oX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F0BC0299C8D4A14045018B4BE9A1E176C5AAA328+++BD739ED"
+    }
+  ]
+}

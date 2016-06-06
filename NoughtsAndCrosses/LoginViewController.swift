@@ -39,48 +39,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
-        
         let email = emailField.text!
         let password = passwordField.text!
         
-        if ((email == "") || (password == "")) {
-            let alertController = UIAlertController(title: "WARNING", message: "Please complete the form!", preferredStyle: .Alert)
+        UserController.sharedInstance.loginUser(email, password: password, presentingViewController: self, viewControllerCompletionFunction: {(user,message) in self.loginCallComplete(user,message:message)})
+        
+    }
+    
+    func loginCallComplete(user:User?,message:String?){
+        
+        if let _ = user   {
             
-            let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            
-            alertController.addAction(OKAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-            
-        else {
-            
-            let (failureMessage, user) = UserController.sharedInstance.loginUser(email, suppliedPassword: password)
-            
-            
-            if (user != nil) {
+            //successfully registered
+            let alert = UIAlertController(title:"Login Successful", message:"You will now be logged in", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {(action) in
+                //when the user clicks "Ok", do the following
                 let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 appDelegate.navigateToBoardViewController()
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }   else    {
+            
+            //registration failed
+            let alert = UIAlertController(title:"Login Failed", message:message!, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: {
                 
-                //at this point we are happy to login the user, so let's implement persistence
-                NSUserDefaults.standardUserDefaults().setValue("TRUE", forKey: "userIdLoggedIn")
-               
-                
-            }
-            else {
-                if let failureMessageObj = failureMessage {
-                    let alertController = UIAlertController(title: "WARNING", message: failureMessage, preferredStyle: .Alert)
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    
-                    alertController.addAction(OKAction)
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                }
-            }
+            })
+            
         }
-        
     }
     
     

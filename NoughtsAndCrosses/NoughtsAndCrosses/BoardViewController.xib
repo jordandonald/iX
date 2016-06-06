@@ -12,6 +12,7 @@
                 <outlet property="boardView" destination="qYi-hH-8b3" id="yB9-EU-td3"/>
                 <outlet property="logOutButton" destination="jum-co-vVY" id="0gS-6j-9HK"/>
                 <outlet property="networkButton" destination="tt2-9l-Loo" id="i5m-1q-cKI"/>
+                <outlet property="newGameButton" destination="qSP-P1-uv7" id="eDW-s2-Saz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="buttons" destination="Lgl-eZ-ME1" collectionClass="NSMutableArray" id="u14-6h-5ZG"/>
                 <outletCollection property="buttons" destination="Lgl-eZ-ME1" collectionClass="NSMutableArray" id="2jy-VN-OSF"/>
@@ -43,16 +44,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYi-hH-8b3" userLabel="Board View">
                     <rect key="frame" x="20" y="189" width="335" height="330"/>
                     <subviews>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouQ-ap-EjW">
-                            <rect key="frame" x="229" y="0.0" width="106" height="104.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                            <state key="normal">
-                                <color key="titleColor" red="0.89019607840000003" green="0.1215686275" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="BoardTapped:" destination="-1" eventType="touchUpInside" id="x22-NI-Cgk"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpC-Ia-fSQ">
                             <rect key="frame" x="0.0" y="184" width="107" height="186"/>
                             <fontDescription key="fontDescription" type="system" pointSize="60"/>
@@ -173,6 +164,16 @@
                             </state>
                             <connections>
                                 <action selector="BoardTapped:" destination="-1" eventType="touchUpInside" id="FUs-Rg-sv8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouQ-ap-EjW">
+                            <rect key="frame" x="229" y="0.0" width="106" height="104.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.89019607840000003" green="0.1215686275" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="BoardTapped:" destination="-1" eventType="touchUpInside" id="x22-NI-Cgk"/>
                             </connections>
                         </button>
                     </subviews>
@@ -321,18 +322,18 @@
                             <exclude reference="d6L-bh-QIQ"/>
                             <exclude reference="sD2-h9-PZS"/>
                             <exclude reference="trE-dq-DFs"/>
-                            <exclude reference="DfF-Kz-Ebs"/>
-                            <exclude reference="EpK-Ar-NoN"/>
-                            <exclude reference="Rd5-NZ-eJe"/>
-                            <exclude reference="Vn6-P1-ODH"/>
-                            <exclude reference="g0Y-9K-Rm1"/>
-                            <exclude reference="ugk-Mv-eg3"/>
                             <exclude reference="Oq2-Tx-S6I"/>
                             <exclude reference="Q7t-8K-AY4"/>
                             <exclude reference="ZnZ-EB-jug"/>
                             <exclude reference="gtH-cR-huh"/>
                             <exclude reference="nSd-Qj-yls"/>
                             <exclude reference="zmz-PF-2BN"/>
+                            <exclude reference="DfF-Kz-Ebs"/>
+                            <exclude reference="EpK-Ar-NoN"/>
+                            <exclude reference="Rd5-NZ-eJe"/>
+                            <exclude reference="Vn6-P1-ODH"/>
+                            <exclude reference="g0Y-9K-Rm1"/>
+                            <exclude reference="ugk-Mv-eg3"/>
                             <exclude reference="1fS-pV-xa2"/>
                             <exclude reference="KPm-ry-XlB"/>
                             <exclude reference="MQR-7V-1EJ"/>
