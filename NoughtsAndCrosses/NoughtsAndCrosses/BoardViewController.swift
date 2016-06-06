@@ -12,6 +12,9 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var boardView: UIView!
     
+    
+    @IBOutlet var buttons: [UIButton]!
+
     var networkMode:Bool = false
     
     override func viewDidLoad() {
@@ -144,9 +147,6 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
         self.navigationController?.pushViewController(npc, animated: true)
         
     }
-    
-
-    @IBOutlet var buttons: [UIButton]!
 
 
 func restartGame() {
