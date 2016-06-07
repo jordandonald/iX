@@ -13,7 +13,7 @@ class EasterEggController: NSObject, UIGestureRecognizerDelegate
 {
     
     
-    var key = ["CCWRotation", "rightSwipe", "downSwipe"]
+    var key = ["rightSwipe", "downSwipe"]
     var index = 0
     
     

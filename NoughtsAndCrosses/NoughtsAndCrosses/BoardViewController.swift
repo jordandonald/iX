@@ -17,8 +17,22 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
 
     var networkMode:Bool = false
     
+    var currentGame = OXGame()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if (!networkMode){
+         
+                refreshButton.hidden = true
+        }
+        
+        if (networkMode){
+            
+            updateUI(currentGame)
+            
+        }
         
         //Rotation
         
@@ -26,12 +40,7 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
         let rotation: UIRotationGestureRecognizer = UIRotationGestureRecognizer(target: self, action:#selector(BoardViewController.handleRotation(_:)))
         self.boardView.addGestureRecognizer(rotation)
         
-        /**
-        let pinch = UIPinchGestureRecognizer(target: self, action:#selector(BoardViewController.handlePinch(_:)))
-        self.boardView.addGestureRecognizer(pinch)
-        **/
-        
-        ClosureExperiment()
+        //ClosureExperiment()
         
     }
     
@@ -73,67 +82,70 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
     
     //This should be a UI Button --> 
     @IBAction func BoardTapped(sender: AnyObject) {
-    
+        
+        
         let tag = sender.tag
-    
-        //set cell value
-        let cellValue = String(OXGameController.sharedInstance.playMove(tag))
-        sender.setTitle(cellValue, forState: UIControlState.Normal)
- 
-    
-        let gameState = OXGameController.sharedInstance.getCurrentGame()!.state()
-        let player = OXGameController.sharedInstance.getCurrentGame()!.whosTurn()
-    
-    
-        if (gameState == OXGameState.complete_someone_won){
-            print("\(String(player)) wins!")
-    
-            OXGameController.sharedInstance.finishCurrentGame()
         
-            if (networkMode) {
+        let gameState = currentGame.state()
+        let player = currentGame.whosTurn().rawValue
+        
+        if(networkMode){
             
-                self.navigationController?.popViewControllerAnimated(true)
             
-            }
-            else
+            //if it's my turn, update the board locally
+            if currentGame.guestUser!.email != ""
             {
-                restartGame()
+                if currentGame.localUsersTurn() {
+                
+                    currentGame.playMove(tag)
+                    OXGameController.sharedInstance.playMove(self.currentGame.serialiseBoard(), gameId: self.currentGame.gameId!, presentingViewController: self, viewControllerCompletionFunction: {(game, message) in self.gameUpdateReceived(game,message:message)})
+                    
+                }
+                else{
+                    
+                    print("It's not your turn.")
+                    
+                }
             }
+            
+            
+            
         }
-        else if (gameState == OXGameState.complete_no_one_won){
-        print("Tie game!")
-    
-            OXGameController.sharedInstance.finishCurrentGame()
-        
-            if (networkMode) {
+        else
+        {
             
-                self.navigationController?.popViewControllerAnimated(true)
-
-            }
-            else
-            {
-                restartGame()
-            }
-  
-        }
-        else {
-        
-            if (networkMode) {
+            //set cell value
+            let cellValue = String(currentGame.playMove(tag))
             
-                let (cellType, index) = OXGameController.sharedInstance.playRandomMove()!
+            //let cellValue = String(OXGameController.sharedInstance.playMove(tag))
+            sender.setTitle(cellValue, forState: UIControlState.Normal)
             
-                buttons[index].setTitle(String(cellType), forState: UIControlState.Normal)
-            
-            }
             if (gameState == OXGameState.complete_someone_won){
-                print("\(String(player)) wins!")
-                self.navigationController?.popViewControllerAnimated(true)
+                //print("\(player) wins!")
+                
+                let alert = UIAlertController(title:"\(player) wins!", message:"Head back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
+                    //when the user clicks "Ok", do the following
+                    self.restartGame()
+                    
+                })
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+            else if (gameState == OXGameState.complete_no_one_won){
+                //print("Tie game!")
+                
+                let alert = UIAlertController(title:"Tie wins!", message:"Head back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
+                    //when the user clicks "Ok", do the following
+                    self.restartGame()
+                    
+                })
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
             
-            }
-            if (gameState == OXGameState.complete_no_one_won){
-                print("Tie game!")
-                self.navigationController?.popViewControllerAnimated(true)
-            }
         }
         
 }
@@ -142,7 +154,6 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBAction func networkButtonTapped(sender: UIButton) {
         
-        
         let npc = NetworkPlayViewController (nibName: "NetworkPlayViewController", bundle:nil)
         self.navigationController?.pushViewController(npc, animated: true)
         
@@ -150,7 +161,7 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
 
 
 func restartGame() {
-    OXGameController.sharedInstance.getCurrentGame()!.reset()
+    currentGame.reset()
     for button in buttons {
         button.setTitle("", forState: UIControlState.Normal)
     }
@@ -174,7 +185,7 @@ func restartGame() {
         
         if (networkMode){
             
-            OXGameController.sharedInstance.finishCurrentGame()
+            //OXGameController.sharedInstance.finishCurrentGame()
             
             self.navigationController?.popViewControllerAnimated(true)
             
@@ -201,6 +212,84 @@ func restartGame() {
         }
         
     }
+    
+    //func gameCancelCompletion(success:Bool, message:String?){}
+    
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    @IBAction func refreshButton(sender: UIButton) {
+        
+        OXGameController.sharedInstance.getGame(self.currentGame.gameId!, presentingViewController: self, viewControllerCompletionFunction: {(game, message) in self.gameUpdateReceived(game,message:message)})
+        
+    }
+    
+    func gameUpdateReceived(game:OXGame?, message:String?) {
+            
+            if let gameReceived = game {
+                self.currentGame = gameReceived
+                print("success")
+            }
+            
+            self.updateUI(self.currentGame)
+        
+    }
+    
+    
+    func updateUI (game:OXGame) {
 
+        var board = game.board
+        
+        
+        for button in buttons {
+            
+            print(board[button.tag])
+            button.setTitle("\(board[button.tag].rawValue)", forState: UIControlState.Normal)
 
+        }
+        
+        
+    
+        if (networkMode){
+            
+            let gameState = currentGame.state()
+            let player = currentGame.whosTurn().rawValue
+            
+            if (gameState == OXGameState.complete_someone_won){
+                
+                let alert = UIAlertController(title:"\(player) wins!", message:"HHead back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
+                    //when the user clicks "Ok", do the following
+                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                })
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else if (gameState == OXGameState.complete_no_one_won){
+                
+                let alert = UIAlertController(title:"Tie game!", message:"Head back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
+                    //when the user clicks "Ok", do the following
+                    self.navigationController?.popViewControllerAnimated(true)
+                    
+                })
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+            
+            if currentGame.guestUser!.email == ""
+            {
+                newGameButton.setTitle("Waiting for an opponent...", forState: UIControlState.Normal)
+            
+            }
+            else {
+                //sets the "New Game Button" to display the current game status
+                newGameButton.setTitle("\(currentGame.whosTurn().rawValue)'s turn!", forState: UIControlState.Normal)
+            }
+        }
+        
+    }
+        
 }
+    

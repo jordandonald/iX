@@ -12,7 +12,6 @@
 		17164ED71CFF690B0020BF61 /* EasterEggViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17164ED51CFF690B0020BF61 /* EasterEggViewController.swift */; };
 		17164ED81CFF690B0020BF61 /* EasterEggViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17164ED61CFF690B0020BF61 /* EasterEggViewController.xib */; };
 		17164EDB1CFF69DB0020BF61 /* EasterEggController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17164EDA1CFF69DB0020BF61 /* EasterEggController.swift */; };
-		1718D1411CFCE7840025A3E1 /* OXGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718D1401CFCE7840025A3E1 /* OXGame.swift */; };
 		1757C8711CFE2E6100598400 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C86F1CFE2E6100598400 /* LandingViewController.swift */; };
 		1757C8721CFE2E6100598400 /* LandingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1757C8701CFE2E6100598400 /* LandingViewController.xib */; };
 		1757C8751CFE2E8100598400 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757C8731CFE2E8100598400 /* LoginViewController.swift */; };
@@ -60,7 +59,6 @@
 		17164ED51CFF690B0020BF61 /* EasterEggViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggViewController.swift; sourceTree = "<group>"; };
 		17164ED61CFF690B0020BF61 /* EasterEggViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EasterEggViewController.xib; sourceTree = "<group>"; };
 		17164EDA1CFF69DB0020BF61 /* EasterEggController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasterEggController.swift; sourceTree = "<group>"; };
-		1718D1401CFCE7840025A3E1 /* OXGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OXGame.swift; path = NoughtsAndCrosses/OXGame.swift; sourceTree = "<group>"; };
 		1757C86F1CFE2E6100598400 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		1757C8701CFE2E6100598400 /* LandingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandingViewController.xib; sourceTree = "<group>"; };
 		1757C8731CFE2E8100598400 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		179339FA1D01BA0E002C5589 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1718D1401CFCE7840025A3E1 /* OXGame.swift */,
 				1757C87B1CFE337100598400 /* UserController.swift */,
 				179339FC1D01C2E7002C5589 /* OXGameController.swift */,
 			);
@@ -439,7 +436,6 @@
 				1706736D1D0587E600F5080B /* WebService.swift in Sources */,
 				17164ED71CFF690B0020BF61 /* EasterEggViewController.swift in Sources */,
 				42D447CE1CD765670070326E /* AppDelegate.swift in Sources */,
-				1718D1411CFCE7840025A3E1 /* OXGame.swift in Sources */,
 				1757C8711CFE2E6100598400 /* LandingViewController.swift in Sources */,
 				1706736F1D05885000F5080B /* UIViewControllerExtensions.swift in Sources */,
 				1757C87C1CFE337100598400 /* UserController.swift in Sources */,

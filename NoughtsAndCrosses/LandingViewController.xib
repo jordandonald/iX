@@ -12,26 +12,41 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vov-3r-GbK">
-                    <rect key="frame" x="168" y="113" width="38" height="30"/>
-                    <state key="normal" title="Login"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vov-3r-GbK">
+                    <rect key="frame" x="243" y="285" width="114" height="30"/>
+                    <color key="backgroundColor" red="0.094052352011203766" green="0.22518706321716309" blue="0.62176847457885742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="114" id="STn-i6-gF5"/>
+                    </constraints>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="jb4-RL-S6r"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-yd-CLj">
-                    <rect key="frame" x="159" y="208" width="57" height="30"/>
-                    <state key="normal" title="Register"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-yd-CLj">
+                    <rect key="frame" x="243" y="350" width="114" height="30"/>
+                    <color key="backgroundColor" red="0.094052352011203766" green="0.22518706321716309" blue="0.62176847457885742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Register">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="lcb-xi-R8I"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <color key="backgroundColor" red="0.2251766378" green="0.66690194400000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="wHN-yd-CLj" firstAttribute="top" secondItem="vov-3r-GbK" secondAttribute="bottom" constant="35" id="N05-fq-aQR"/>
+                <constraint firstItem="vov-3r-GbK" firstAttribute="trailing" secondItem="wHN-yd-CLj" secondAttribute="trailing" id="Qxl-Yw-3SU"/>
+                <constraint firstItem="vov-3r-GbK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Srh-1B-em1"/>
+                <constraint firstItem="vov-3r-GbK" firstAttribute="leading" secondItem="wHN-yd-CLj" secondAttribute="leading" id="aHm-jF-oAq"/>
+                <constraint firstItem="vov-3r-GbK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oiB-4y-1Lc"/>
+            </constraints>
         </view>
     </objects>
 </document>

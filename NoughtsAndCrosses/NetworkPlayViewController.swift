@@ -22,13 +22,9 @@ class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
     
         // Do any additional setup after loading the view.
-         self.title = "Network Play"
-        self.navigationController?.navigationBarHidden = false
-       
         
+        //From Class
         //OXGameController.sharedInstance.gameList(self,viewControllerCompletionFunction: {(gameList, message) in self.gameListReceived(gameList, message:message)})
-
-        
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -45,8 +41,10 @@ class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    //From Class
     func gameListReceived(games:[OXGame]?,message:String?) {
         
+        print ("games received \(games)")
         if let newGames = games {
             self.gameList = newGames
         }
@@ -80,45 +78,65 @@ class NetworkPlayViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-    OXGameController.sharedInstance.acceptGameWithId(String(gameList[indexPath.row].gameId!))
-        
-        
-        let bvc = BoardViewController (nibName: "BoardViewController", bundle:nil)
-        bvc.networkMode = true
-        self.navigationController?.pushViewController(bvc, animated: true)
-        
-        
+        var gameRowSelected = indexPath.row
+        OXGameController.sharedInstance.acceptGame(self.gameList[indexPath.row].gameId!, presentingViewController: self, viewControllerCompletionFunction: {(game, message) in self.acceptGameComplete(game,message:message)})
 
     }
     
+    func acceptGameComplete(game:OXGame?, message:String?){
+        print("accept game call complete")
+        
+        if let gameAcceptedSuccess = game {
+            let networkBoardView = BoardViewController(nibName: "BoardViewController", bundle: nil)
+            networkBoardView.networkMode = true
+            networkBoardView.currentGame = gameAcceptedSuccess
+            self.navigationController?.pushViewController(networkBoardView, animated: true)
+        }
+    }
+
+    
     override func viewWillAppear(animated: Bool) {
+        self.title = "Network Play"
+        
         self.navigationController?.navigationBarHidden = false
         
-        gameList = OXGameController.sharedInstance.getListOfGames()!
-        
-        self.gameList = OXGameController.sharedInstance.getListOfGames()!
+        OXGameController.sharedInstance.gameList( self, viewControllerCompletionFunction: {(gameList ,message) in self.gameListReceived(gameList, message: message )})
         self.tableView.reloadData()
         refreshControl.endRefreshing()
 
-        }
-
+    }
+    
     
     @IBAction func startNetworkGameButton(sender: UIButton) {
         
-    OXGameController.sharedInstance.createNewGame((UserController.sharedInstance.logged_in_user)!)
-    
+        print("startNetworkGameButtonTapped")
+        OXGameController.sharedInstance.createNewGame(UserController.sharedInstance.getLoggedInUser()!, presentingViewController: self,viewControllerCompletionFunction: {(game, message) in self.newStartGameCompleted(game, message:message)})
+   
+        
     }
     
+    func newStartGameCompleted(game:OXGame?,message:String?) {
+        if let newGame = game {
+            let networkBoardView = BoardViewController(nibName: "BoardViewController", bundle: nil)
+            networkBoardView.networkMode = true
+            networkBoardView.currentGame = newGame
+            self.navigationController?.pushViewController(networkBoardView, animated: true)
+        }
+    }
     
     func refreshTable() {
         
-        self.gameList = OXGameController.sharedInstance.getListOfGames()!
+        OXGameController.sharedInstance.gameList( self, viewControllerCompletionFunction: {(gameList ,message) in self.gameListReceived(gameList, message: message )})
         self.tableView.reloadData()
         refreshControl.endRefreshing()
         
     }
+   
+}
     
-    }
+
+    
+
     
 
 
