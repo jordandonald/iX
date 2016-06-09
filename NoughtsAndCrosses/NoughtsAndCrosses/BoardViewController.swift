@@ -121,7 +121,8 @@ class BoardViewController: UIViewController,UIGestureRecognizerDelegate {
             sender.setTitle(cellValue, forState: UIControlState.Normal)
             
             if (gameState == OXGameState.complete_someone_won){
-                //print("\(player) wins!")
+//                print("\(player) wins!")
+//                self.restartGame()
                 
                 let alert = UIAlertController(title:"\(player) wins!", message:"Head back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
                 let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
@@ -256,7 +257,7 @@ func restartGame() {
             
             if (gameState == OXGameState.complete_someone_won){
                 
-                let alert = UIAlertController(title:"\(player) wins!", message:"HHead back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title:"\(player) wins!", message:"Head back to available games.", preferredStyle: UIAlertControllerStyle.Alert)
                 let action = UIAlertAction(title: "Shweet", style: UIAlertActionStyle.Default, handler: {(action) in
                     //when the user clicks "Ok", do the following
                     self.navigationController?.popViewControllerAnimated(true)
